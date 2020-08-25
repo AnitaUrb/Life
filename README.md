@@ -5,6 +5,7 @@ The task was to write a program enabling to simulate Conway's Game of Life based
 The rules of the game are as follows:<br />
 - We consider automata with values 0 (dead cell) or 1 (living cell) in each of the cells of a rectangular matrix MxN
 - We consider the Moore's neighborhood, i.e. each cell (except for the edge ones) has 8 neighbors.<br />
+
 The rules of evolution:<br />
 - If the cell is alive in step t, it remains alive in step t + 1, if it has 2 or 3 neighbors alive (otherwise it dies in step t + 1)
 - if the cell is dead in step t, it remains dead in step t + 1 unless it has exactly 3 neighbors alive.<br />
@@ -34,4 +35,4 @@ The program takes as parameters:
 
 Then the program performs such a simulation and saves the results as animation.
 
-More information about https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life and https://en.wikipedia.org/wiki/Cellular_automaton.
+More information about [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) and [Cellular automaton](https://en.wikipedia.org/wiki/Cellular_automaton).
