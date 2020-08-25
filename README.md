@@ -27,13 +27,15 @@ Then we can compute a new state value in the matrix at position M [i, j] (for al
 ```
 N[i,j]=E[np.sum(M[i-1:i+2,j-1:j+2]*S)]
 ```
-The program takes as parameters:
+The program takes as parameters: <br />
+!!!POPRAWIC!!!
 
 - the size of the state of the automaton in the form of a vector
 - weight matrix in the form of a matrix to be loaded by e.g. load ()
 - vector rules of evolution
 - The initial state of the state matrix
 - the number of simulation steps to be performed.
+!!!POPRAWIC!!!<br />
 
 Then the program performs such a simulation and saves the results as animation.
 
