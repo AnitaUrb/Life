@@ -13,18 +13,20 @@ The rules of evolution:<br />
 In this case, the neighborhood will be represented as weight matrices, that is, square matrices of odd sizes (usually 3 × 3) 
 and the rules of evolution as vectors. <br />
 For example, as an example of a game of life, we can consider the neighborhood matrix:
-
+```
 S=np.array([[1,1,1],[1,10,1],[1,1,1]])
+```
 and write the rule of evolution as:
-
+```
 E= np.zeros((18,),dtype=int8)
 E[3]=1
 E[12]=1
 E[13]=1
-
+```
 Then we can compute a new state value in the matrix at position M [i, j] (for all "internal" i, j) as:
-
+```
 N[i,j]=E[np.sum(M[i-1:i+2,j-1:j+2]*S)]
+```
 The program takes as parameters:
 
 - the size of the state of the automaton in the form of a vector
