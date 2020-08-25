@@ -2,15 +2,15 @@
 
 The task was to write a program enabling to simulate Conway's Game of Life based on cellular automaton. 
 
-The rules of the game are as follows:
+The rules of the game are as follows:<br />
 - We consider automata with values 0 (dead cell) or 1 (living cell) in each of the cells of a rectangular matrix MxN
-- We consider the Moore's neighborhood, i.e. each cell (except for the edge ones) has 8 neighbors.
-The rules of evolution:
+- We consider the Moore's neighborhood, i.e. each cell (except for the edge ones) has 8 neighbors.<br />
+The rules of evolution:<br />
 - If the cell is alive in step t, it remains alive in step t + 1, if it has 2 or 3 neighbors alive (otherwise it dies in step t + 1)
-- if the cell is dead in step t, it remains dead in step t + 1 unless it has exactly 3 neighbors alive.
+- if the cell is dead in step t, it remains dead in step t + 1 unless it has exactly 3 neighbors alive.<br />
 
 In this case, the neighborhood will be represented as weight matrices, that is, square matrices of odd sizes (usually 3 × 3) 
-and the rules of evolution as vectors. 
+and the rules of evolution as vectors. <br />
 For example, as an example of a game of life, we can consider the neighborhood matrix:
 
 S=np.array([[1,1,1],[1,10,1],[1,1,1]])
