@@ -42,6 +42,6 @@ terminal:~$ *./path_to/life_game.py path_to/M path_to/S path_to/E steps_number y
 
 All given files are checked for correctness, otherwise the appropriate messages are displayed.
 Program uses input data in [.npy](https://numpy.org/devdocs/reference/generated/numpy.lib.format.html) format. Example input files:<br /> 
-*matrix.npy (M), neighbor.npy (S), ewol.npy (E)*. Example incorrect initial state matrix: *matrice.npy*<br />
+*matrix.npy (M), neighbor.npy (S), ewol.npy (E)*. Example incorrect initial state matrix: *matrice.npy*.<br />
 Optimal number of steps: *30*. <br />
-Example result of simulation: *life.mp4*
+Example result of simulation: *life.mp4*.
