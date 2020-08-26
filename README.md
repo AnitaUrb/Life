@@ -34,7 +34,7 @@ To start the simulation: <br />
 
 terminal:~$ *./path_to/life_game.py path_to/M path_to/S path_to/E steps_number yes_or_no*<br />
 
-M - initial state of the state matrix, S - neighborhood matrix, E - evolution vector, steps_number - number of simulation steps, yes_or_no - additional argument responsible for whether the simulation result will be saved in "life.mp4" (option 'yes'), or displayed only (option 'no')
+M - initial state of the state matrix, S - neighborhood matrix, E - evolution vector, steps_number - number of simulation steps, yes_or_no - additional argument responsible for whether the simulation result will be saved in "life.mp4" (option *'yes'*), or displayed only (any other option)
 
 Program uses input data in [.npy](https://numpy.org/devdocs/reference/generated/numpy.lib.format.html) format. Example input files:<br /> 
 *matrix.npy, neighbor.npy, ewol.npy*.<br />
