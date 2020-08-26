@@ -28,12 +28,15 @@ Then we can compute a new state value in the matrix at position M [i, j] (for al
 ```
 N[i,j]=E[np.sum(M[i-1:i+2,j-1:j+2]*S)]
 ```
+Then the program performs such a simulation and performs the results as animation.<br />
 
-The program takes as parameters: <br />
-M - initial state of the state matrix, S - neighborhood matrix, E - evolution vector, steps - number of simulation steps
+To start the simulation: <br />
 
-terminal:~$ *./path_to/life_game.py path_to/M path_to/S path_to/E steps_number*
+terminal:~$ *./path_to/life_game.py path_to/M path_to/S path_to/E steps_number yes_or_no*<br />
 
-Example input data: *matrix.npy,neighbor.npy, ewol.npy*; number of steps: 30.
+M - initial state of the state matrix, S - neighborhood matrix, E - evolution vector, steps_number - number of simulation steps, yes_or_no - additional argument responsible for whether the simulation result will be saved in "life.mp4" (option 'yes'), or displayed only (option 'no')
 
-Then the program performs such a simulation and saves the results as animation.
+Program uses input data in [.npy](https://numpy.org/devdocs/reference/generated/numpy.lib.format.html) format. Example input files:<br /> 
+*matrix.npy, neighbor.npy, ewol.npy*.<br />
+Optimal number of steps: 30. <br />
+Example result of simulation: *life.mp4*
