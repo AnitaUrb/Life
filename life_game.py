@@ -1,14 +1,5 @@
-# README:
-# Dane wejściowe muszą być w podane tylko w takiej kolejności:
-# M - inicjalny stan macierzy stanu, S - macierz sąsiedztwa, E - wektor reguł ewolucji, steps - liczba kroków symulacji
-# (tylko w takiej z uwagi na różne możliwe postaci macierzy, co robi rozpoznawanie ich (bez kolejności) bardzo
-# uciążliwym). Jako output w bieżącym katalogu powstanie plik "life.mp4" i zostanie wyświetlony kawałek animacji.
-# Również (jeżli możemy rozszerzyć input wskazany w zadaniu) wygodne by było pobieranie dodatkowego 4. parametru
-# 'tak/nie', odpowiadającego za to, czy będzie wynik symulacji zapisany w "life.mp4" (opcja 'tak'), czy będzie
-# tylko wyświetlony (opcja 'nie'); wtedy należałoby odkomentować linie 54-55 i zakomentować 57.
-# materials:
-# https://stackoverflow.com/questions/41827109/funcanimation-with-a-matrix
-# https://matplotlib.org/api/_as_gen/matplotlib.pyplot.matshow.html
+# NOTE: all the arguments must be given only in the order described in README.md;
+# passing it in a different order causes problems.
 
 
 import numpy as np
@@ -16,24 +7,25 @@ import sys
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
-#pobrane parametry są wczytywane i sprawdzane (na poprawność)
+
+# The given data is loaded and checked
 M = np.load(sys.argv[1])
 for i in np.nditer(M):
     if i != 0 and i != 1:
-        sys.exit("Niepoprawna inicjalna macierz stanu (parametr 1): ma zawierać tylko wartości (0, 1)")
+        sys.exit("Incorrect initial state matrix (parameter 1): should contain only values (0, 1)")
 S = np.load(sys.argv[2])
 E = np.load(sys.argv[3])
 if E.ndim != 1:
-    sys.exit("Niepoprawny parametr 3: ma być wektorem")
+    sys.exit("Invalid parameter 3: should be a vector")
 for i in np.nditer(E):
     if i != 0 and i != 1:
-        sys.exit("Niepoprawny wektor reguł ewolucji (parametr 3): ma zawierać tylko wartości (0, 1)")
+        sys.exit("Invalid vector of evolution rules (parameter 3): should contain only values (0, 1)")
 steps = int(sys.argv[4])
 if steps < 0:
-    sys.exit("Niepoprawny parametr 4: liczba kroków symulacji ma być dodatnia")
+    sys.exit("Invalid parameter 4: the number of simulation steps should be positive")
 
 
-#funkcja generująca kolejne stany
+# a function that generates successive states
 def life(n):
     global M
     newM = M.copy()
@@ -46,13 +38,14 @@ def life(n):
     return [mat]
 
 
-#przedstawienie wyników w animacji za pomocą funkcji 'FuncAnimation'
+# presenting the results in an animation using the 'FuncAnimation' function
 fig, ax = plt.subplots()
 mat = ax.matshow(M)
 ani = animation.FuncAnimation(fig, life, frames=steps, blit=True)
 
-# if sys.argv[5] == 'tak':
-#     ani.save('life.mp4')
+# Performing the result
+if len(sys.argv) == 6 and sys.argv[5] == 'yes':
+    ani.save('life1.mp4')
+else:
+    plt.show()
 
-ani.save('life.mp4')
-plt.show()
