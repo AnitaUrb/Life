@@ -45,7 +45,7 @@ ani = animation.FuncAnimation(fig, life, frames=steps, blit=True)
 
 # Performing the result
 if len(sys.argv) == 6 and sys.argv[5] == 'yes':
-    ani.save('life1.mp4')
+    ani.save('life.mp4')
 else:
     plt.show()
 
