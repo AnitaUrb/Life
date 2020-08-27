@@ -32,7 +32,7 @@ Then the program performs such a simulation and performs the results as animatio
 
 To start the simulation: <br />
 
-terminal:~$ *./path_to/life_game.py path_to/M path_to/S path_to/E steps_number yes_or_no*<br />
+call:~$ *./path_to/life_game.py path_to/M path_to/S path_to/E steps_number yes_or_no*<br />
 
 - *M* - initial state of the state matrix,
 - *S* - neighborhood matrix,
